@@ -1,0 +1,19 @@
+name: CI - Sample Workflow
+    
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  create-zarf-packages-and-test:
+    runs-on: [self-hosted, linux, x64, philips-code-hub, ubuntu-latest]
+    environment: development
+    steps: 
+    - name: Print the variable
+      run: |
+          echo ${{ vars.PRINT_STATEMENT }} 
